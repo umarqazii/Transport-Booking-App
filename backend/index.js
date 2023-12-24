@@ -83,7 +83,11 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connection established successfully"))
   .catch((err) => console.log(err));
 
-  
+  //-----------------------
+
+app.get("/" , (req,res) => {
+  res.json("Hello")
+})
 
 
 
