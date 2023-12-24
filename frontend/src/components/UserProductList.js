@@ -10,7 +10,7 @@ function UserProductList() {
 
   useEffect(() => {
     // Fetch all requests when the component mounts
-    axios.get('http://localhost:5000/user-own-products')
+    axios.get('https://transport-booking-app-backend.vercel.app/user-own-products')
       .then(response => setAllProducts(response.data))
       .catch(error => console.error(error));
   }, []);
