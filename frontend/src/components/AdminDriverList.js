@@ -11,7 +11,7 @@ function AdminDriverList() {
 
   useEffect(() => {
     // Fetch all requests when the component mounts
-    axios.get('http://localhost:5000/driver-list')
+    axios.get('https://transport-booking-app-backend.vercel.app/driver-list')
       .then(response => setAllProducts(response.data))
       .catch(error => console.error(error));
   }, []);
@@ -20,7 +20,7 @@ function AdminDriverList() {
       
       const newDriverAvailability = prompt('Enter the new availability status');
   
-      axios.put(`http://localhost:5000/edit-driver-availability/${driverId}`, {
+      axios.put(`https://transport-booking-app-backend.vercel.app/edit-driver-availability/${driverId}`, {
         driverAvailability: newDriverAvailability
       })
         .then(response => {
@@ -31,7 +31,7 @@ function AdminDriverList() {
     }
 
   const handleDriverDeletion = (driverId) => {
-    axios.delete(`http://localhost:5000/delete-driver/${driverId}`)
+    axios.delete(`https://transport-booking-app-backend.vercel.app/delete-driver/${driverId}`)
       .then(response => {
         console.log(response);
         window.location.reload();
