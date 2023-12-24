@@ -16,7 +16,7 @@ function UserDashboard() {
     // Assuming you have an authentication token in localStorage
 
     axios.post(
-      'http://localhost:5000/create-booking',
+      'https://transport-booking-app-backend.vercel.app/create-booking',
       {
         bookingDate: bookingDate,
         bookingTime: bookingTime,
