@@ -30,7 +30,7 @@ function Signup() {
     }
 
     axios
-      .post("http://localhost:5000/signup", {
+      .post("https://transport-booking-app-backend.vercel.app/signup", {
         username: username,
         email: email,
         password: password,
