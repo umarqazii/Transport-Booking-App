@@ -11,7 +11,7 @@ function AdminVehicleList() {
 
   useEffect(() => {
     // Fetch all requests when the component mounts
-    axios.get('http://localhost:5000/vehicle-list')
+    axios.get('https://transport-booking-app-backend.vercel.app/vehicle-list')
       .then(response => setAllProducts(response.data))
       .catch(error => console.error(error));
   }, []);
@@ -19,7 +19,7 @@ function AdminVehicleList() {
 
   
   const handleVehicleDeletion = (vehicle_id) => {
-    axios.delete(`http://localhost:5000/delete-vehicle/${vehicle_id}`)
+    axios.delete(`https://transport-booking-app-backend.vercel.app/delete-vehicle/${vehicle_id}`)
       .then(response => {
         console.log(response);
         window.location.reload();
