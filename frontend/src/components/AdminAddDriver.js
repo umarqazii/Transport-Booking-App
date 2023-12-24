@@ -15,7 +15,7 @@ function AdminAddDriver() {
     // Assuming you have an authentication token in localStorage
 
     axios.post(
-      'http://localhost:5000/add-driver',
+      'https://transport-booking-app-backend.vercel.app/add-driver',
       {
         driverName: driverName,
       }
