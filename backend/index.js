@@ -73,7 +73,7 @@ const {
 
 app.use(cors(
   {
-    origin: ["https://transport-booking-app-frontend.vercel.app/"],
+    origin: ["https://transport-booking-app-frontend.vercel.app"],
     methods:["POST", "GET","PUT", "DELETE"],
     credentials: true
   }
