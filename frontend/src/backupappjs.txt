@@ -1,0 +1,29 @@
+import React, { useState } from 'react';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import AddSoftware from './components/AddSoftware';
+
+<AddSoftware />;
+const App = () => {
+  const [currentPage, setCurrentPage] = useState('login');
+
+  const switchToSignup = () => {
+    setCurrentPage('signup');
+  };
+
+  const switchToLogin = () => {
+    setCurrentPage('login');
+  };
+
+  return (
+    <div>
+      {currentPage === 'login' ? (
+        <Login onSwitchToSignup={switchToSignup} />
+      ) : (
+        <Signup onSwitchToLogin={switchToLogin} />
+      )}
+    </div>
+  );
+};
+
+export default App;
