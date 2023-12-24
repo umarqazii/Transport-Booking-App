@@ -17,11 +17,11 @@ function AdminShowRequests() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/all-requests");
+        const response = await axios.get("https://transport-booking-app-backend.vercel.app/all-requests");
         const requestsData = await Promise.all(
           response.data.map(async (request) => {
             const result = await axios.get(
-              `http://localhost:5000/get-user/${request.userId}`
+              `https://transport-booking-app-backend.vercel.app/get-user/${request.userId}`
             );
             return {
               username: result.data,
@@ -50,7 +50,7 @@ function AdminShowRequests() {
     const newFare = prompt("Enter the new fare");
 
     axios
-      .put(`http://localhost:5000/edit-fare/${bookingId}`, {
+      .put(`https://transport-booking-app-backend.vercel.app/edit-fare/${bookingId}`, {
         fare: newFare,
       })
       .then((response) => {
@@ -62,7 +62,7 @@ function AdminShowRequests() {
 
   const handleApproveBooking = (bookingId) => {
     axios
-      .put(`http://localhost:5000/update-booking/${bookingId}`, {
+      .put(`https://transport-booking-app-backend.vercel.app/update-booking/${bookingId}`, {
         bookingStatus: "Approved",
       })
       .then((response) => {
@@ -74,7 +74,7 @@ function AdminShowRequests() {
 
   const handleAssignDriver = (bookingId) => {
     axios
-      .put(`http://localhost:5000/assign-driver/${bookingId}`)
+      .put(`https://transport-booking-app-backend.vercel.app/assign-driver/${bookingId}`)
       .then((response) => {
         console.log(response);
         window.location.reload();
@@ -84,7 +84,7 @@ function AdminShowRequests() {
 
   const handleAssignVehicle = (bookingId) => {
     axios
-      .put(`http://localhost:5000/assign-vehicle/${bookingId}`)
+      .put(`https://transport-booking-app-backend.vercel.app/assign-vehicle/${bookingId}`)
       .then((response) => {
         console.log(response);
         window.location.reload();
@@ -94,7 +94,7 @@ function AdminShowRequests() {
 
   const handleDeleteBooking = (bookingId) => {
     axios
-      .delete(`http://localhost:5000/delete-booking/${bookingId}`)
+      .delete(`https://transport-booking-app-backend.vercel.app/delete-booking/${bookingId}`)
       .then((response) => {
         console.log(response);
         window.location.reload();
