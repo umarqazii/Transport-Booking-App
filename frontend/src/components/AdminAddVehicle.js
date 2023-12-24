@@ -18,7 +18,7 @@ function AdminAddDVehicle() {
     // Assuming you have an authentication token in localStorage
 
     axios.post(
-      'http://localhost:5000/add-vehicle',
+      'https://transport-booking-app-backend.vercel.app/add-vehicle',
       {
         vehicleName: vehicleName,
         vehicleType: vehicleType,
