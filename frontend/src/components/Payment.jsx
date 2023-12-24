@@ -15,7 +15,7 @@ const Payment = ({ booking }) => {
                 return;
           }
        
-        axios.post('http://localhost:5000/create-checkout-session', { fare:  booking.fare})
+        axios.post('https://transport-booking-app-backend.vercel.app/create-checkout-session', { fare:  booking.fare})
           .then((res) => {
             console.log("Checkout session Successful~");
             const body = res.data;
